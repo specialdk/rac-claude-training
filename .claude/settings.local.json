@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"C:/rac-claude-training/RAC_Claude_Teams_Training_Overview.docx\" -o \"C:/rac-claude-training/extracted_content.md\" --wrap=none)"
+    ]
+  }
+}

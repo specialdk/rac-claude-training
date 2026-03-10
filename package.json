@@ -1,0 +1,7 @@
+{
+  "name": "rac-claude-training",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx serve . --single --listen 3000"
+  }
+}
