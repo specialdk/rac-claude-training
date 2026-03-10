@@ -4,19 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAC Claude Teams Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---teal:#1B6B6B;--teal-light:#238383;--teal-dark:#145252;
---ochre:#C4922A;--ochre-light:#D4A43E;--ochre-dark:#A67A1F;
---cream:#F5F0E8;--cream-dark:#EBE4D8;
---charcoal:#2C2C2C;--charcoal-light:#444;
---success:#2D8A4E;--error:#C0392B;
+--teal:#C4651A;--teal-light:#D4722A;--teal-dark:#A0522D;
+--ochre:#D4A43E;--ochre-light:#E8B84E;--ochre-dark:#A67A1F;
+--cream:#F5E6D3;--cream-dark:#EDD5BC;
+--charcoal:#2D1B0E;--charcoal-light:#6B5B4E;
+--success:#4A7C59;--error:#B33A3A;
 --radius:8px;--shadow:0 2px 12px rgba(0,0,0,.08);
 }
 html{scroll-behavior:smooth}
 body{
-font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+font-family:'Work Sans',sans-serif;
 font-size:17px;line-height:1.7;color:var(--charcoal);
 background:var(--cream);min-height:100vh;
 }
@@ -54,7 +57,7 @@ border-left:3px solid transparent;font-size:15px;color:rgba(255,255,255,.75);
 }
 .nav-item:hover{background:rgba(255,255,255,.06);color:#fff}
 .nav-item.active{
-background:rgba(27,107,107,.25);color:#fff;
+background:rgba(196,101,26,.25);color:#fff;
 border-left-color:var(--ochre);font-weight:600;
 }
 .nav-item .nav-check{
@@ -146,7 +149,7 @@ border-radius:var(--radius);padding:20px 24px;margin:18px 0;
 border-left:4px solid;
 }
 .callout-title{font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.callout.key-concept{background:#E8F4F4;border-color:var(--teal)}
+.callout.key-concept{background:#FDF0E8;border-color:var(--teal)}
 .callout.key-concept .callout-title{color:var(--teal)}
 .callout.rac-example{background:#FDF6E8;border-color:var(--ochre)}
 .callout.rac-example .callout-title{color:var(--ochre-dark)}
@@ -230,7 +233,7 @@ border-radius:6px;cursor:pointer;border:2px solid var(--cream-dark);
 transition:all .2s;font-size:15px;
 }
 .quiz-opt:hover{border-color:var(--teal);background:var(--cream)}
-.quiz-opt.selected{border-color:var(--teal);background:#e8f4f4}
+.quiz-opt.selected{border-color:var(--teal);background:#FDF0E8}
 .quiz-opt.correct{border-color:var(--success);background:#e8f4e8}
 .quiz-opt.incorrect{border-color:var(--error);background:#fde8e8}
 .quiz-opt .opt-marker{
@@ -289,7 +292,7 @@ position:relative;overflow:hidden;
 }
 .home-hero::before{
 content:'';position:absolute;inset:0;
-background-image:radial-gradient(circle,rgba(196,146,42,.15) 2px,transparent 2px);
+background-image:radial-gradient(circle,rgba(212,164,62,.15) 2px,transparent 2px);
 background-size:20px 20px;
 }
 .home-hero *{position:relative}
