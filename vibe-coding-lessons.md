@@ -237,6 +237,30 @@ function pointInPolygon(point, polygonPoints) {
   - `public/dashboard.html` = main dashboard UI
   - Deploys to Railway, connects to GitHub for auto-deploy
 
+### 5.3 Validate every metric against the source system before trusting a dashboard
+
+**What happened:** The FleetComplete fuel delivery dashboard loaded data successfully, looked polished, and showed believable numbers (6 loads, 3 deliveries, 788.7km, 91m turnaround). But "looks right" is not the same as "is right." Before handing it to Gavin, we cross-checked every KPI against FleetComplete's native trip log:
+
+| Dashboard | FleetComplete | Match |
+|---|---|---|
+| 6 loads at Rio Fuel Gantry | 6 explicit Rio Gantry stops | ✅ |
+| 3 deliveries at Mine Fuel Farm | 3 explicit Mine Fuel Farm stops | ✅ |
+| 788.7 km total | 789 km (sum of daily totals) | ✅ |
+| Current location: Quarry Depot | Last entry: Quarry Depot | ✅ |
+| Last seen: 17 Apr 11:11am | Final stop: 17 Apr 11:11 | ✅ |
+| 91m avg turnaround (2 cycles) | 94m + 87m = 181m, avg 90.5m | ✅ |
+
+Only once every single number tied out did we declare the dashboard shippable.
+
+**What to remember:**
+- Pretty dashboards lie. Proven dashboards don't.
+- The fact that data "loaded successfully" means nothing — the *interpretation* can still be wrong. A chart can render perfectly while counting the wrong thing.
+- Before giving a dashboard to the user it's built for, take every KPI, every chart number, every date — and manually verify against the source system's own reports.
+- Cross-checking via the same API is a secondary check. The **real** validation is comparing against the source system's native UI, because that's what the user trusts.
+- Expect small discrepancies (timezone boundaries, rounding) — explain them, don't ignore them.
+- This step is the difference between a toy and a tool. Don't skip it just because the dashboard "looks right."
+- Bonus: the validation exercise often surfaces genuine business insights you wouldn't have found otherwise. (In this case: fuel loaded late one day was being delivered the next morning — not a bug, an operational pattern worth knowing.)
+
 ---
 
 ## Contributing new lessons
