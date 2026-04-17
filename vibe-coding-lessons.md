@@ -114,6 +114,42 @@ if (!response.ok) {
 }
 ```
 
+### 3.3 When one approach is blocked, pivot — don't persist
+
+**What happened:** We fixed the Geotab `search` wrapping bug and confirmed it worked for Trip queries (25 trips returned successfully). But `/api/zone-events` (ZoneStop type) kept returning HTTP 500 even with the same fix — some other Geotab quirk. Rather than spend more time hunting that, we switched to computing loads/deliveries from Trip data + point-in-polygon math against the geofence boundaries. Same information, more reliable, no broken API dependency.
+
+**What to remember:**
+- When you've tried the obvious fixes and a bug is still there, ask: "is there another path to the same answer?"
+- Perseverance is a virtue in debugging *up to a point*. Past that point it's sunk cost.
+- The signal to pivot: you're making fixes and seeing no progress, or you're guessing at schemas
+- A working alternative beats a broken "proper" solution every time
+- This also protects you against future API changes — the alternative path might be more stable
+
+### 3.4 Point-in-polygon math as an escape hatch
+
+**What happened:** Geotab's ZoneStop endpoint was broken for us, but it was conceptually just "which zone did the truck stop in?" We had Trip data (`stopPoint` coordinates) and geofence polygons (`points` arrays). We re-implemented the zone detection client-side using the classic ray-casting point-in-polygon algorithm:
+
+```javascript
+function pointInPolygon(point, polygonPoints) {
+  const x = point.x, y = point.y;
+  let inside = false;
+  for (let i = 0, j = polygonPoints.length - 1; i < polygonPoints.length; j = i++) {
+    const xi = polygonPoints[i].x, yi = polygonPoints[i].y;
+    const xj = polygonPoints[j].x, yj = polygonPoints[j].y;
+    const intersect = ((yi > y) !== (yj > y)) &&
+      (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+```
+
+**What to remember:**
+- Many "smart" API endpoints are just geometry or arithmetic done on the server
+- If you have the raw data (coordinates, polygons, timestamps), you can often compute the answer yourself
+- Classic algorithms like ray-casting, haversine distance, and great-circle bearing are 10-line helpers you can paste in
+- Bonus: doing the math client-side means zero network calls for that logic — faster dashboard, less load on the API
+
 ---
 
 ## 4. Dashboard & UI Design
@@ -154,6 +190,26 @@ if (!response.ok) {
 - Operational roles (front-line) = Daily/real-time
 - Management roles = Weekly/Monthly with drill-down to Daily when they want detail
 - Executive roles = Monthly/Quarterly trend summaries
+
+### 4.5 Capture everything, then filter down — don't pre-filter at source
+
+**What happened:** Initial scope for the FleetComplete dashboard was fuel trucks only (RF01, RF02). But the underlying FleetComplete system has 7 vehicles. User (BI manager) made the call: show all 7 by default, add a "Fuel Only" filter. The dashboard would now capture the full picture and let Gavin narrow down when he wanted.
+
+**What to remember:**
+- Pre-filtering at the data source is tempting but limiting. Every time the question changes ("but what about the Tipper?"), you have to rebuild.
+- The BI-correct pattern: load the wide set → let the user filter → render the subset
+- This also protects against future questions. When the boss asks "what's everyone doing?", you already have the data.
+- The only argument for pre-filtering is *performance*. If performance is fine (it usually is for fleets of 7 or even 700), show everything.
+- Corollary: the filter control itself becomes valuable UI. Make it obvious and fast — segmented button, dropdown with search, etc.
+
+### 4.6 Adaptive KPIs based on filter context
+
+**What happened:** When the dashboard was fuel-only, KPIs were Loads / Deliveries / Turnaround. When expanded to all 7 vehicles, those metrics don't make sense for a Bobcat or Skid Steer. Solution: KPIs now adapt based on what the user has filtered to — fuel-focused metrics for fuel vehicles, fleet-wide metrics (total trips, distance, hours) when showing all vehicles.
+
+**What to remember:**
+- Same KPI slots, different contents depending on filter — this is more useful than hiding KPIs or showing "N/A"
+- The label of the KPI should update too, not just the value
+- This is essentially "one dashboard, many audiences". A fleet manager looking at all vehicles sees one version; a fuel operations manager sees another. Both via the same UI.
 
 ---
 
