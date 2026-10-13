@@ -100,7 +100,11 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         exercise: `Paste the shared block into your settings, then do your own interview and save the result. Then ask "what do you know about me now?" in the same chat and see the difference.` },
 
       { n: `1.6`, title: `What you can actually do with it`,
-        intro: `Six things people actually use it for. Files enter at number two and build from there.`,
+        files: [
+          { label: `Vehicle policy (prompt 2)`,  href: `https://ydac.sharepoint.com/:f:/g/IgDsrOOnxkHwR7zNpB5AQUxDAabj0GO1QKDLvipK2zaDHq4?e=dpBCVI` },
+          { label: `20 exam papers (prompt 5)`, href: `https://ydac.sharepoint.com/:f:/g/IgAxWZT9q7Z-RrOQtmERWaRRAUBljWmpgJXoO7sSYmDOgIU?e=Ah4Y4Q` }
+        ],
+        intro: `Six things people actually use it for. Files enter at number two and build from there. <strong>To give Claude a file, drag it from your folder straight into the chat box</strong> — or click <strong>+</strong> and choose it — then type the prompt and send.`,
         prompts: [
           { lab: `1 · Ask Questions`,
             txt: `What does "in-kind contribution" mean in a grant budget? Explain it simply and give me an example.` },
@@ -256,6 +260,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `2.6`, title: `Your first hand-off`,
+        files: [ { label: `The three exercise files`, href: `https://ydac.sharepoint.com/:f:/g/IgDsrOOnxkHwR7zNpB5AQUxDAabj0GO1QKDLvipK2zaDHq4?e=dpBCVI` } ],
         intro: `Three files go on the desk, one summary comes out — and it lands in your own folder, not in a chat window you have to copy from. The policy is RAC's real vehicle policy; the fleet spreadsheet and the minutes are made up for the exercise.`,
         table: { head: [`The three files`, `What's in it`, `Format`], rows: [
           [`OP 4.03 Company Vehicle Policy`,             `RAC's real vehicle policy — fuel cards, odometer readings, incident reporting, servicing and personal use.`, `PDF`],
@@ -307,6 +312,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
     { title: `Part Four — Claude at Work`, lessons: [
 
       { n: `3.2`, title: `Standing instructions for the folder`,
+        files: [ { label: `An example claude.md`, href: `https://ydac.sharepoint.com/:f:/g/IgCUkFW9V8gUTq6uSZMDiiPkAfdRENIYzTyb7P1BVSyjCQM?e=4W3FFK` } ],
         intro: `A claude.md file in a folder is context that applies to every task run there. It's the same idea as project instructions, one level down.`,
         prompts: [
           { lab: `Let it interview you`,
@@ -314,6 +320,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `3.3`, title: `Doing several things at once`,
+        files: [ { label: `The three exercise files (same as 2.6)`, href: `https://ydac.sharepoint.com/:f:/g/IgDsrOOnxkHwR7zNpB5AQUxDAabj0GO1QKDLvipK2zaDHq4?e=dpBCVI` } ],
         intro: `Describe several tasks in one go and it organises the work itself.`,
         prompts: [
           { lab: `Three at once — same folder as 2.6`,
@@ -383,6 +390,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `4.2`, title: `What a skill actually is`,
+        files: [ { label: `Example skill files`, href: `https://ydac.sharepoint.com/:f:/g/IgA3ZoaF0FExRZpusVM4n4ikAbsulg6iwh-nspLNmCYZ2a8?e=015cnm` } ],
         intro: `If you've typed roughly the same prompt three times, that's a skill. And a skill is just a text file — no code in it anywhere.`,
         table: { head: [`Put it here`, `When`, `RAC example`], rows: [
           [`Preferences`,                     `Relevant to everything you produce, always`,                                  `Yolŋu spelling and the ŋ character. Australian English`],

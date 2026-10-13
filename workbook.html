@@ -93,6 +93,10 @@ code{background:var(--cream);padding:1px 6px;border-radius:4px;font-size:13.5px;
 .how .h5{margin-top:0}
 .how ul.pts li{font-size:14.5px}
 .how .chk{font-family:'Quicksand',system-ui,sans-serif;text-transform:none;letter-spacing:0;color:var(--ink-soft);font-weight:500}
+.files{background:#fff;border:1.5px solid var(--sun);border-radius:8px;padding:12px 16px;margin:14px 0 4px}
+.files .h5{margin-top:0}
+.files a{display:inline-block;margin:2px 16px 6px 0;color:var(--earth);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--sun)}
+.files p{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
 </style>
 </head>
 <body>
@@ -140,6 +144,7 @@ code{background:var(--cream);padding:1px 6px;border-radius:4px;font-size:13.5px;
         let h = '<div class="les" id="L' + l.n + '"><div class="les-h"><span class="les-n">' + l.n + '</span><div class="les-title">' + l.title + '</div></div><div class="les-body">';
         if (l.intro)  h += '<p class="intro">' + l.intro + '</p>';
         if (l.points) h += list(l.points);
+        if (l.files)  h += '<div class="files"><div class="h5">Files for this lesson</div>' + l.files.map(f => '<a href="' + f.href + '" target="_blank" rel="noopener">' + f.label + ' &#8599;</a>').join('') + '<p>Opens in SharePoint (RAC login needed). Click <strong>Download</strong>, then use the file as the lesson describes.</p></div>';
         if (l.howNow) h += '<div class="how"><div class="h5">How it looks right now <span class="chk">— checked ' + C.lastChecked + '</span></div>' + list(l.howNow) + '</div>';
         if (l.table)  h += '<table class="t"><thead><tr>' + l.table.head.map(x => '<th>' + x + '</th>').join('') + '</tr></thead><tbody>'
                          + l.table.rows.map(r => '<tr>' + r.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table>';
