@@ -101,7 +101,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
 
       { n: `1.6`, title: `What you can actually do with it`,
         files: [
-          { label: `Vehicle policy (prompt 2)`,  href: `https://ydac.sharepoint.com/:f:/g/IgDsrOOnxkHwR7zNpB5AQUxDAabj0GO1QKDLvipK2zaDHq4?e=dpBCVI` },
+          { label: `Vehicle policy (prompt 2)`,  href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` },
           { label: `20 exam papers (prompt 5)`, href: `https://ydac.sharepoint.com/:f:/g/IgAxWZT9q7Z-RrOQtmERWaRRAUBljWmpgJXoO7sSYmDOgIU?e=Ah4Y4Q` }
         ],
         intro: `Six things people actually use it for. Files enter at number two and build from there. <strong>To give Claude a file, drag it from your folder straight into the chat box</strong> — or click <strong>+</strong> and choose it — then type the prompt and send.`,
@@ -260,7 +260,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `2.6`, title: `Your first hand-off`,
-        files: [ { label: `The three exercise files`, href: `https://ydac.sharepoint.com/:f:/g/IgDsrOOnxkHwR7zNpB5AQUxDAabj0GO1QKDLvipK2zaDHq4?e=dpBCVI` } ],
+        files: [ { label: `The three exercise files`, href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` } ],
         intro: `Three files go on the desk, one summary comes out — and it lands in your own folder, not in a chat window you have to copy from. The policy is RAC's real vehicle policy; the fleet spreadsheet and the minutes are made up for the exercise.`,
         table: { head: [`The three files`, `What's in it`, `Format`], rows: [
           [`OP 4.03 Company Vehicle Policy`,             `RAC's real vehicle policy — fuel cards, odometer readings, incident reporting, servicing and personal use.`, `PDF`],
@@ -320,7 +320,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `3.3`, title: `Doing several things at once`,
-        files: [ { label: `The three exercise files (same as 2.6)`, href: `https://ydac.sharepoint.com/:f:/g/IgDsrOOnxkHwR7zNpB5AQUxDAabj0GO1QKDLvipK2zaDHq4?e=dpBCVI` } ],
+        files: [ { label: `The three exercise files (same as 2.6)`, href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` } ],
         intro: `Describe several tasks in one go and it organises the work itself.`,
         prompts: [
           { lab: `Three at once — same folder as 2.6`,
