@@ -321,7 +321,8 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         intro: `Claude can only work with what you put in front of it. Attach files to your message, or — for a set of files, or when you want the results saved back — connect a folder on your computer.`,
         points: [
           `Desktop app installed and signed in on your RAC account.`,
-          `A dedicated working folder created and connected (e.g. "RAC Claude Work").`,
+          `<strong>Set up a simple folder structure.</strong> One parent folder (e.g. "RAC Claude Work") with a subfolder for each piece of work, matching your Projects — "Grants 2026", "Board Reports". Then you always know where Claude's files are.`,
+          `<strong>Connect the subfolder for the job, not the whole parent.</strong> It keeps Claude's desk small and the work tidy.`,
           `<strong>The desk rule:</strong> the connected folder is Claude's desk. Anything you put on the desk, Claude can read — and reading it means sending it to Anthropic's servers.`,
           `So put work files on the desk. Not your whole Documents folder.`
         ],
