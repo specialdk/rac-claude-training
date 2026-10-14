@@ -13,6 +13,10 @@
    - "How it looks right now" boxes (howNow) are the ONLY place for
      click-by-click steps. When the app changes, update those and
      the lastChecked date below.
+   - online: { more, exercise } on a lesson shows ONLY on the website
+     (for people working alone, without the class files or a presenter).
+     online: { quiz, reflection } on a session does the same.
+     The workbook ignores everything inside online: { }.
    ══════════════════════════════════════════════════════════════════ */
 
 const COURSE = {
@@ -30,7 +34,23 @@ const COURSE = {
   sessions: [
 
   /* ═══════════ SESSION 1 ═══════════ */
-  { n: 1, label: `Using Claude`, parts: [
+  { n: 1, label: `Using Claude`, online: {
+    reflection: `How did today change the way you'll start your next conversation with Claude?`,
+    quiz: [
+      { q: `Where does Claude's knowledge about you come from?`,
+        options: [`Everything on the internet`, `Only what you give it — preferences, projects, memory and the conversation`, `Your RAC email, automatically`, `It doesn't know anything, ever`],
+        correct: 1,
+        why: `Claude knows what you give it, at four levels. That's why setting your preferences makes such a difference.` },
+      { q: `An answer comes back generic. What's the best fix?`,
+        options: [`Use a special phrase like 'think step by step'`, `Give it more context — who it's for, what you need, what matters`, `Type it again in capitals`, `Give up and write it yourself`],
+        correct: 1,
+        why: `Technique has aged out; information hasn't. More context almost always fixes a generic answer.` },
+      { q: `Which of these should never go into a chat?`,
+        options: [`Meeting notes`, `A policy document`, `Passwords or banking details`, `A draft email`],
+        correct: 2,
+        why: `No passwords, no banking details, no sensitive personal information about other people.` }
+    ] },
+  parts: [
 
     { title: `Part One — Foundations`, lessons: [
 
@@ -77,6 +97,7 @@ const COURSE = {
           { lab: `Training cutoff versus web search`,
             txt: `What's your training cutoff date? Now search the web and tell me what's actually current for NIAA grant rounds — what's open and when does it close?` }
         ],
+        online: { more: `The four levels, widest first: <strong>Preferences</strong> — every conversation, always. <strong>Project instructions</strong> — every conversation inside that Project. <strong>Memory</strong> — things Claude picks up as you go, which you can view and prune. <strong>The conversation</strong> — this chat only, gone when you start a new one.` },
         exercise: `Run the first prompt on your own account. It will probably come back fairly thin — that's the point, and it's what we fix next.` },
 
       { n: `1.5`, title: `Setting up your preferences`,
@@ -105,6 +126,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           { label: `20 exam papers (prompt 5)`, href: `https://ydac.sharepoint.com/:f:/g/IgAxWZT9q7Z-RrOQtmERWaRRAUBljWmpgJXoO7sSYmDOgIU?e=Ah4Y4Q` }
         ],
         intro: `Six things people actually use it for. Files enter at number two and build from there. <strong>To give Claude a file, drag it from your folder straight into the chat box</strong> — or click <strong>+</strong> and choose it — then type the prompt and send.`,
+        online: { more: `Prompts 2 and 5 use the files linked above. Prompt 6 has its bullet points built in — once you've seen it work, swap in five of your own.` },
         prompts: [
           { lab: `1 · Ask Questions`,
             txt: `What does "in-kind contribution" mean in a grant budget? Explain it simply and give me an example.` },
@@ -117,7 +139,12 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           { lab: `5 · Analyse`,
             txt: `Here are 20 marked exam papers. Which questions did the class get wrong most often, where are they consistently strong, and which students need help? Give me a one-page summary I can actually look at.` },
           { lab: `6 · Develop Solutions`,
-            txt: `Turn these five bullet points into a one-page summary I can print and stick on the tearoom wall.` }
+            txt: `Turn these five bullet points into a one-page notice I can print and stick on the tearoom wall:
+- Fridge is cleared every Friday at 3pm, so label your food
+- Wash, dry and put away your own cups
+- Last one out turns off the urn and the lights
+- Report anything broken to reception
+- Milk and tea are shared. If you finish it, let someone know` }
         ] },
 
       { n: `1.7`, title: `Prompting is a skill`,
@@ -182,7 +209,23 @@ I review, approve and authorise all AI-assisted output before it is used or dist
   ]},
 
   /* ═══════════ SESSION 2 ═══════════ */
-  { n: 2, label: `Files, Projects, and putting Claude to work`, parts: [
+  { n: 2, label: `Files, Projects, and putting Claude to work`, online: {
+    reflection: `What's one job you do every week that you could hand to Claude as a finished result?`,
+    quiz: [
+      { q: `How do you get Claude to do a piece of work rather than just answer?`,
+        options: [`Switch to a different app`, `Describe the finished result you want, and give it the files to work from`, `Write some code`, `Pay for an upgrade`],
+        correct: 1,
+        why: `There's no mode to switch. Describe the result — a document, a deck, a summary — and give it the material.` },
+      { q: `What does the desk rule mean?`,
+        options: [`Keep your desk tidy`, `Connect your whole Documents folder so Claude has everything`, `Only put the files for this job in the connected folder`, `Claude can read any file on your computer`],
+        correct: 2,
+        why: `Anything on the desk, Claude can read — and reading it means sending it to Anthropic's servers. Work files only.` },
+      { q: `What does a Project give you?`,
+        options: [`A shared drive`, `Standing instructions and files that apply to every chat inside it`, `A faster version of Claude`, `A way to email other staff`],
+        correct: 1,
+        why: `Start inside a Project and its instructions apply automatically — to answers and to work on files.` }
+    ] },
+  parts: [
 
     { title: `Part Two — Everyday Work`, lessons: [
 
@@ -194,6 +237,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           `There are many good specialist tools and they're often better at the one thing they do. Worth knowing, not worth hiding.`,
           `<strong>The rule:</strong> if the job is always the same, a specialist tool wins. If the job changes depending on what you need this time, the platform wins.`
         ],
+        online: { more: `On your own, use the transcript of any recent meeting — Teams and Zoom can both produce one. Skim the result before you share it, and use the roles-not-names follow-up if it's going beyond the people who were there.` },
         prompts: [
           { lab: `Drop in the transcript`,
             txt: `Here's the transcript from our team meeting. Turn it into minutes. I want: attendees, then the key points discussed under headings, then decisions, then actions with an owner and a due date where one was given. Keep people's own words where the wording matters. If something was left unresolved, or you can't tell who owned an action, say so rather than guessing. Give it to me as a Word document.` },
@@ -267,6 +311,8 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           [`RAC-Fleet-Fuel-and-Incidents-Q4-FY2026`,     `Four tabs: the vehicle register, a quarter of fuel card transactions, the incident register, and a summary.`, `Excel`],
           [`RAC-Operations-Meeting-Minutes-9-July-2026`, `The team discussing that report. Six items and four actions.`,                                                `Word`]
         ] },
+        online: { more: `In class everyone uses these same three files, so the results can be compared. On your own, any three related documents work — a policy, a spreadsheet and some notes about the same topic.`,
+                  exercise: `Put three related documents of your own in your working folder, run the prompt, and watch the document appear in your folder.` },
         prompts: [
           { lab: `The ask — keep it ordinary`,
             txt: `Read the documents in this folder and write one summary that captures the key points from each. Save it as Fleet-Summary.docx.` }
@@ -275,6 +321,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
 
       { n: `2.7`, title: `Projects drive the work too`,
         intro: `Start a new conversation inside a Project and its instructions apply to the work automatically — on files too — without you restating them.`,
+        online: { more: `This works best with a Project that has real instructions in it. Try the same prompt once outside the Project and once inside it, and compare what comes back.` },
         prompts: [
           { lab: `Notice how little you have to say`,
             txt: `Read everything in this folder and draft the board paper.` }
@@ -295,7 +342,23 @@ I review, approve and authorise all AI-assisted output before it is used or dist
   ]},
 
   /* ═══════════ SESSION 3 ═══════════ */
-  { n: 3, label: `Claude at work`, parts: [
+  { n: 3, label: `Claude at work`, online: {
+    reflection: `Which scheduled task would save you the most time — and what would you have it do?`,
+    quiz: [
+      { q: `What is a claude.md file?`,
+        options: [`A backup of your chats`, `Standing instructions for one folder`, `A list of your passwords`, `Claude's training data`],
+        correct: 1,
+        why: `It's project instructions, one level down: context that applies to every task run in that folder.` },
+      { q: `What can a connector see?`,
+        options: [`Everything at RAC`, `Only what you can already see, with your permissions`, `Other people's inboxes`, `Nothing until IT approves each email`],
+        correct: 1,
+        why: `It uses your account and your permissions. It reads when you ask, and you can switch it off.` },
+      { q: `What does a scheduled task do?`,
+        options: [`Sends emails on your behalf`, `Runs a prompt on its own, on a schedule — it drafts, it never sends`, `Books meetings automatically`, `Reminds you to log in`],
+        correct: 1,
+        why: `Write the prompt once and it turns up on schedule. Claude drafts; you decide what gets sent.` }
+    ] },
+  parts: [
 
     { title: `Open — Session Three`, lessons: [
       { n: `3.1`, title: `Back in the room`,
@@ -322,6 +385,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
       { n: `3.3`, title: `Doing several things at once`,
         files: [ { label: `The three exercise files (same as 2.6)`, href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` } ],
         intro: `Describe several tasks in one go and it organises the work itself.`,
+        online: { more: `If you used your own files in 2.6, change the three tasks to suit them — keep the shape: three jobs, one prompt, "save them".` },
         prompts: [
           { lab: `Three at once — same folder as 2.6`,
             txt: `Three things at once, please. One: turn the meeting minutes into a one-page brief. Two: build a table from the fuel spreadsheet showing each vehicle's spend and litres for the quarter, and flag anything in the transactions that looks out of place. Three: draft a short covering note for the Operations Manager that pulls both together and flags anything the policy requires that is not being followed. Save them.` },
@@ -332,6 +396,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
 
       { n: `3.4`, title: `Connectors — reaching your other systems`,
         intro: `A connector lets Claude reach a system you already use — your mail, your calendar, your SharePoint — without you exporting anything first. It uses your account and your permissions, so it can't see anything you can't already see. It reads when you ask; it isn't watching your inbox. And you can switch it off.`,
+        online: { more: `If M365 isn't offered as a connector, ask Duane — RAC decides which connectors are switched on.` },
         prompts: [
           { lab: `Test 1 · Calendar`,
             txt: `What meetings do I have today?` },
@@ -379,12 +444,29 @@ I review, approve and authorise all AI-assisted output before it is used or dist
   ]},
 
   /* ═══════════ SESSION 4 ═══════════ */
-  { n: 4, label: `Skills and automation`, parts: [
+  { n: 4, label: `Skills and automation`, online: {
+    reflection: `What have you typed three times that should become a skill?`,
+    quiz: [
+      { q: `When should something become a skill?`,
+        options: [`When it's urgent`, `When you've typed roughly the same prompt three times`, `Only when IT builds it`, `Never — preferences are always better`],
+        correct: 1,
+        why: `The three-times rule. If you keep asking for the same thing the same way, package it.` },
+      { q: `What is a skill, really?`,
+        options: [`A program only developers can write`, `A text file of instructions — no code`, `A paid add-on`, `A type of Project`],
+        correct: 1,
+        why: `Anyone can read a skill file. It's written instructions, packaged so they travel.` },
+      { q: `What is a plugin?`,
+        options: [`A browser extension`, `A bag of skills you install from one file`, `A hardware device`, `A connector to Xero`],
+        correct: 1,
+        why: `Someone builds it once, hands you a file, and you have every skill inside it.` }
+    ] },
+  parts: [
 
     { title: `Part Five — Skills`, lessons: [
 
       { n: `4.1`, title: `Using a skill`,
         intro: `Type a slash, pick it from the list, go. Watch what it does that nobody asked for.`,
+        online: { more: `This only works once the RAC plugin is installed — see 4.3. Ask Duane for the plugin file.` },
         prompts: [
           { lab: `Run the skill`, txt: `/racdesign` }
         ] },
@@ -400,6 +482,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
 
       { n: `4.3`, title: `Getting one — the RAC plugin`,
         intro: `A plugin is a bag of skills. Someone builds it once, hands you a file, and you have it.`,
+        online: { exercise: `Ask Duane for the RAC plugin file, install it, then come back to 4.1 and run /racdesign.` },
         exercise: `Install the plugin and run the skill. You leave with a working RAC skill on your own account.` },
 
       { n: `4.4`, title: `What have you typed three times?`,
