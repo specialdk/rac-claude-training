@@ -240,6 +240,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
     { title: `Part Two — Everyday Work`, lessons: [
 
       { n: `2.1`, title: `Working with files`,
+        files: [ { label: `Meeting transcript`, href: `https://ydac.sharepoint.com/:f:/g/IgDQP9FT5bBFRao4yBrljMujAV-PvdaDMDi8qgrXl3sIFz4?e=NddRPG` } ],
         intro: `Claude reads documents you give it — PDF, Word, Excel, PowerPoint, images, plain text. Drag and drop, or use the attachment icon. A photo of a whiteboard works.`,
         points: [
           `Claude wasn't in the meeting. Something else records and transcribes — Tactiq, or your Teams or Zoom transcript — and Claude turns that into minutes. Two tools.`,
@@ -247,7 +248,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           `There are many good specialist tools and they're often better at the one thing they do. Worth knowing, not worth hiding.`,
           `<strong>The rule:</strong> if the job is always the same, a specialist tool wins. If the job changes depending on what you need this time, the platform wins.`
         ],
-        online: { more: `On your own, use the transcript of any recent meeting — Teams and Zoom can both produce one. Skim the result before you share it, and use the roles-not-names follow-up if it's going beyond the people who were there.` },
+        online: { more: `Use the transcript linked above, or the transcript of any recent meeting of your own — Teams and Zoom can both produce one. Skim the result before you share it, and use the roles-not-names follow-up if it's going beyond the people who were there.` },
         prompts: [
           { lab: `Drop in the transcript`,
             txt: `Here's the transcript from our team meeting. Turn it into minutes. I want: attendees, then the key points discussed under headings, then decisions, then actions with an owner and a due date where one was given. Keep people's own words where the wording matters. If something was left unresolved, or you can't tell who owned an action, say so rather than guessing. Give it to me as a Word document.` },
