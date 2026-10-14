@@ -257,6 +257,30 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
          { n: `2.2`, title: `Projects — staying organised and keeping context`,
+        diagram: `<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Inside a Project: Project Instructions and Files that you write, Project memory and Personal memory that Claude writes, and your chats, all in one place." style="display:block;width:100%;max-width:520px;height:auto;margin:14px 0 6px;font-family:Quicksand,system-ui,sans-serif">
+<rect x="2" y="2" width="476" height="356" rx="16" style="fill:#F0EBE1;stroke:#7F2C2F;stroke-width:2"/>
+<text x="22" y="36" style="font-size:18px;font-weight:700;fill:#7F2C2F">A Project — e.g. "Grants 2026"</text>
+<text x="22" y="66" style="font-size:13px;font-weight:700;fill:#5E5A55;letter-spacing:1px">YOU WRITE</text>
+<rect x="22" y="76" width="212" height="86" rx="10" style="fill:#fff;stroke:#5C2B34;stroke-width:1.8"/>
+<text x="38" y="104" style="font-size:16px;font-weight:700;fill:#5C2B34">Instructions</text>
+<text x="38" y="126" style="font-size:14px;fill:#5E5A55">How to behave —</text>
+<text x="38" y="145" style="font-size:14px;fill:#5E5A55">the standing rules</text>
+<rect x="246" y="76" width="212" height="86" rx="10" style="fill:#fff;stroke:#5C2B34;stroke-width:1.8"/>
+<text x="262" y="104" style="font-size:16px;font-weight:700;fill:#5C2B34">Files</text>
+<text x="262" y="126" style="font-size:14px;fill:#5E5A55">What's true —</text>
+<text x="262" y="145" style="font-size:14px;fill:#5E5A55">reference material</text>
+<text x="22" y="192" style="font-size:13px;font-weight:700;fill:#5E5A55;letter-spacing:1px">CLAUDE WRITES</text>
+<rect x="22" y="202" width="212" height="86" rx="10" style="fill:#F6F5F2;stroke:#1D2426;stroke-width:1.4;stroke-dasharray:5 4"/>
+<text x="38" y="230" style="font-size:16px;font-weight:700;fill:#1D2426">Project memory</text>
+<text x="38" y="252" style="font-size:14px;fill:#5E5A55">Where you're up to —</text>
+<text x="38" y="271" style="font-size:14px;fill:#5E5A55">built from your chats</text>
+<rect x="246" y="202" width="212" height="86" rx="10" style="fill:#F6F5F2;stroke:#1D2426;stroke-width:1.4;stroke-dasharray:5 4"/>
+<text x="262" y="230" style="font-size:16px;font-weight:700;fill:#1D2426">Personal memory</text>
+<text x="262" y="252" style="font-size:14px;fill:#5E5A55">About you —</text>
+<text x="262" y="271" style="font-size:14px;fill:#5E5A55">follows you in</text>
+<rect x="22" y="304" width="436" height="40" rx="10" style="fill:#F4C63F;stroke:#1D2426;stroke-width:1.4"/>
+<text x="38" y="330" style="font-size:15px;font-weight:700;fill:#1D2426">Your chats — every one uses all of the above</text>
+</svg>`,
         online: { more: `Not sure what to put in your Project Instructions? Let Claude interview you, the same way it did for your preferences in 1.5. Start a chat inside your new Project and say: <em>"Interview me about this piece of work, one question at a time, then write me a short set of Project Instructions I can paste in."</em>` },
         intro: `Every chat you start is saved in your history. After a few weeks that's a long list, and finding the one conversation that mattered gets hard. A <strong>Project</strong> is a folder for related chats: everything about one piece of work, in one place. It also solves a second problem: inside a Project, Claude already knows the background, so you stop re-explaining it every time you start a new chat.`,
         points: [
@@ -342,6 +366,31 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `2.6`, title: `Your first hand-off`,
+        diagram: `<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The hand-off: you put files in your connected folder, ask for a result, Claude reads the files and plans the steps, and the finished file lands back in your folder." style="display:block;width:100%;max-width:520px;height:auto;margin:14px 0 6px;font-family:Quicksand,system-ui,sans-serif">
+<rect x="2" y="2" width="200" height="296" rx="14" style="fill:#F0EBE1;stroke:#7F2C2F;stroke-width:2"/>
+<text x="20" y="34" style="font-size:16px;font-weight:700;fill:#7F2C2F">Your folder</text>
+<rect x="20" y="52" width="164" height="38" rx="7" style="fill:#fff;stroke:#5C2B34;stroke-width:1.4"/>
+<text x="34" y="77" style="font-size:14px;fill:#1D2426">Vehicle policy · PDF</text>
+<rect x="20" y="98" width="164" height="38" rx="7" style="fill:#fff;stroke:#5C2B34;stroke-width:1.4"/>
+<text x="34" y="123" style="font-size:14px;fill:#1D2426">Fleet fuel · Excel</text>
+<rect x="20" y="144" width="164" height="38" rx="7" style="fill:#fff;stroke:#5C2B34;stroke-width:1.4"/>
+<text x="34" y="169" style="font-size:14px;fill:#1D2426">Ops minutes · Word</text>
+<rect x="20" y="226" width="164" height="54" rx="7" style="fill:#F4C63F;stroke:#1D2426;stroke-width:1.6"/>
+<text x="34" y="249" style="font-size:14px;font-weight:700;fill:#1D2426">Fleet-Summary.docx</text>
+<text x="34" y="268" style="font-size:13px;fill:#1D2426">finished — saved here</text>
+<rect x="278" y="70" width="200" height="160" rx="14" style="fill:#fff;stroke:#1D2426;stroke-width:1.8"/>
+<text x="296" y="102" style="font-size:16px;font-weight:700;fill:#1D2426">Claude</text>
+<text x="296" y="128" style="font-size:14px;fill:#5E5A55">1. Reads the files</text>
+<text x="296" y="152" style="font-size:14px;fill:#5E5A55">2. Plans the steps</text>
+<text x="296" y="176" style="font-size:14px;fill:#5E5A55">3. Writes the result</text>
+<text x="296" y="210" style="font-size:13px;fill:#7F2C2F">You can walk away</text>
+<path d="M204 116 L268 116" style="stroke:#7F2C2F;stroke-width:2"/>
+<path d="M266 110 L276 116 L266 122 Z" style="fill:#7F2C2F"/>
+<text x="212" y="106" style="font-size:12px;fill:#7F2C2F">reads</text>
+<path d="M276 200 C240 200 236 253 210 253" style="stroke:#7F2C2F;stroke-width:2;fill:none"/>
+<path d="M214 247 L204 253 L214 259 Z" style="fill:#7F2C2F"/>
+<text x="226" y="276" style="font-size:12px;fill:#7F2C2F">saves</text>
+</svg>`,
         files: [ { label: `The three exercise files`, href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` } ],
         intro: `Three files go on the desk, one summary comes out — and it lands in your own folder, not in a chat window you have to copy from. The policy is RAC's real vehicle policy; the fleet spreadsheet and the minutes are made up for the exercise.`,
         table: { head: [`The three files`, `What's in it`, `Format`], rows: [
