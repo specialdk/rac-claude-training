@@ -148,6 +148,7 @@ code{background:var(--cream);padding:1px 6px;border-radius:4px;font-size:13.5px;
         if (l.howNow) h += '<div class="how"><div class="h5">How it looks right now <span class="chk">— checked ' + C.lastChecked + '</span></div>' + list(l.howNow) + '</div>';
         if (l.table)  h += '<table class="t"><thead><tr>' + l.table.head.map(x => '<th>' + x + '</th>').join('') + '</tr></thead><tbody>'
                          + l.table.rows.map(r => '<tr>' + r.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table>';
+        if (l.example) h += '<div class="how"><div class="h5">' + l.example.title + '</div><ol style="margin:8px 0 2px 20px;font-size:14.5px;line-height:1.6;color:var(--ink-soft)">' + l.example.steps.map(s => '<li style="padding:3px 0">' + s + '</li>').join('') + '</ol></div>';
         if (l.prompts && l.prompts.length) h += '<div class="h5">' + (l.prompts.length > 1 ? 'Prompts' : 'Prompt') + '</div>'
                          + l.prompts.map(pr => '<div class="pr"><div class="pr-top"><span class="pr-lab">' + pr.lab + '</span></div><div class="pr-txt">' + esc(pr.txt) + '</div><button class="cp">Copy</button></div>').join('');
         if (l.exercise) h += '<div class="ex"><div class="h5">Your turn</div><p>' + l.exercise + '</p></div>';

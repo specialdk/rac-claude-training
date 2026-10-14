@@ -271,13 +271,28 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           [`Project memory`,         `Where you're up to. Current state, open questions, who owes you an answer. Rebuilt nightly from your chats`,               `Claude`],
           [`Personal memory`,        `What it picked up about you. Follows you into every project`,                                                              `Claude`]
         ] },
+            example: { title: `Worked example — a "Grants 2026" Project`, steps: [
+          `<strong>Create it.</strong> In the left sidebar click <strong>Projects</strong>, then <strong>New project</strong>. Name it <em>Grants 2026</em>.`,
+          `<strong>Project Instructions.</strong> Open the Project's instructions and paste in the example below. These are the standing rules for every chat in this Project.`,
+          `<strong>Files / Add to Project.</strong> Add the reference material: the funder's guidelines and RAC's organisation profile.`,
+          `<strong>Project memory.</strong> Nothing to do. Claude builds it from your chats in this Project.`,
+          `<strong>Personal memory.</strong> Nothing to do either. It already follows you in.`,
+          `<strong>Start a chat inside the Project</strong> and run the first prompt below. Watch it use what you just added.`
+        ] },
         prompts: [
+          { lab: `Example Project Instructions — paste into the instructions box`,
+            txt: `This Project is for RAC's grant applications in 2026.
+- Audience is funders: government (NIAA, NT Government) and philanthropic.
+- Australian spelling, plain language, no jargon.
+- Use correct Yolŋu spelling, including the ŋ character.
+- When drafting, follow the funder's guidelines in the Project files and name the criterion you're answering.
+- If a figure or fact isn't in the files, say so. Don't make it up.` },
           { lab: `Make the context visible — callback to 1.4`,
             txt: `What's in this project's knowledge, and how are you using it to answer me right now?` },
           { lab: `When a file is genuinely worth writing`,
             txt: `We've been working on this for a while. Write up what you now know about this project as a markdown file I can add to the project knowledge — the standing facts, the decisions we've made, and what you should assume from now on.` }
         ],
-        exercise: `Create one Project named after real work you're doing, start a chat inside it, and run the first prompt to watch the context being used.` }
+        exercise: `Create a Project for real work of your own using the same steps — or set up Grants 2026 to practise. Start a chat inside it and run the "Make the context visible" prompt to watch the context being used.` }
     ]},
 
     { title: `Part Three — Putting Claude to Work`, lessons: [
