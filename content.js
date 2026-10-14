@@ -356,13 +356,20 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ],
         exercise: `Put the three files in your working folder, run the prompt, and watch the document appear. That is the whole exercise — a finished file, in your folder, that you never saved.` },
 
-      { n: `2.7`, title: `Projects drive the work too`,
-        intro: `Start a new conversation inside a Project and its instructions apply to the work automatically — on files too — without you restating them.`,
-        online: { more: `This works best with a Project that has real instructions in it. Try the same prompt once outside the Project and once inside it, and compare what comes back.` },
+      { n: `2.7`, title: `Coming back to a Project`,
+        intro: `The real value of a Project shows up the next day, and the day after. Go back into it and everything is still there: the work you've done, the files, and the background Claude needs. You can pick up an old conversation or start a new one. Either way, you're not starting from scratch.`,
+        points: [
+          `<strong>It keeps the work.</strong> Every conversation and file in the Project stays together, so nothing gets lost in your general history.`,
+          `<strong>You can resume.</strong> Open an earlier conversation and carry on exactly where you left off.`,
+          `<strong>It keeps the context.</strong> The Project's instructions and files apply to every chat inside it, without you explaining them again.`,
+          `<strong>A new chat still knows where you're up to.</strong> Project memory carries the thread between conversations, so you don't have to hunt for the old one.`,
+          `<strong>Resume or start fresh?</strong> Resume when you're picking up the same job. Start a new chat for a new task, or when a long conversation has wandered off track. The Project context comes with you either way.`
+        ],
         prompts: [
-          { lab: `Notice how little you have to say`,
-            txt: `Read everything in this folder and draft the board paper.` }
-        ] }
+          { lab: `Starting a new chat in a Project you've used before`,
+            txt: `Where are we up to on this? Remind me what's been done, what's still open, and what I should do next.` }
+        ],
+        exercise: `Go back into the Project you made in 2.2 and start a new chat. Run the prompt and see how much it already knows. Then open your earlier conversation from the Project and add one more message to it.` }
     ]},
 
     { title: `Close — Session Two`, lessons: [
