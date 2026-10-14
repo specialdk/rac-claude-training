@@ -143,6 +143,7 @@ code{background:var(--cream);padding:1px 6px;border-radius:4px;font-size:13.5px;
         nav  += '<div class="nav-l" data-go="L' + l.n + '"><span class="nav-n">' + l.n + '</span><span>' + l.title + '</span></div>';
         let h = '<div class="les" id="L' + l.n + '"><div class="les-h"><span class="les-n">' + l.n + '</span><div class="les-title">' + l.title + '</div></div><div class="les-body">';
         if (l.intro)  h += '<p class="intro">' + l.intro + '</p>';
+        if (l.diagram) h += l.diagram;
         if (l.points) h += list(l.points);
         if (l.files)  h += '<div class="files"><div class="h5">Files for this lesson</div>' + l.files.map(f => '<a href="' + f.href + '" target="_blank" rel="noopener">' + f.label + ' &#8599;</a>').join('') + '<p>Opens in SharePoint (RAC login needed). Click <strong>Download</strong>, then use the file as the lesson describes.</p></div>';
         if (l.howNow) h += '<div class="how"><div class="h5">How it looks right now <span class="chk">— checked ' + C.lastChecked + '</span></div>' + list(l.howNow) + '</div>';

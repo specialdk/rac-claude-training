@@ -198,6 +198,7 @@ code{background:var(--cream);padding:1px 6px;border-radius:4px;font-size:13.5px;
         const on = l.online || {};
         h += '<div class="les" id="L' + l.n + '"><div class="les-h"><span class="tick">&#10003;</span><span class="les-n">' + l.n + '</span><div class="les-title">' + l.title + '</div><span class="arw">&#9660;</span></div><div class="les-body">';
         if (l.intro)  h += '<p class="intro">' + l.intro + '</p>';
+        if (l.diagram) h += l.diagram;
         if (l.points) h += list(l.points);
         if (l.files)  h += '<div class="files"><div class="h5">Files for this lesson</div>' + l.files.map(f => '<a href="' + f.href + '" target="_blank" rel="noopener">' + f.label + ' &#8599;</a>').join('') + '<p>Opens in SharePoint (RAC login needed). Click <strong>Download</strong>, then use the file as the lesson describes.</p></div>';
         if (on.more)  h += '<div class="more"><div class="h5">Working on your own</div>' + on.more + '</div>';

@@ -418,13 +418,46 @@ I review, approve and authorise all AI-assisted output before it is used or dist
 
     { title: `Part Four — Claude at Work`, lessons: [
 
-      { n: `3.2`, title: `Standing instructions for the folder`,
+    { n: `3.2`, title: `Standing instructions for the folder`,
+        diagram: `<svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Context ladder: Preferences contain Projects, which contain connected folders, which contain claude.md. A skill sits alongside and works at any level." style="display:block;width:100%;max-width:520px;height:auto;margin:14px 0 6px;font-family:Quicksand,system-ui,sans-serif">
+<rect x="2" y="2" width="476" height="326" rx="16" style="fill:#F0EBE1;stroke:#7F2C2F;stroke-width:2"/>
+<text x="22" y="34" style="font-size:17px;font-weight:700;fill:#7F2C2F">Preferences · 1.5</text>
+<text x="22" y="56" style="font-size:15px;fill:#5E5A55">You — every conversation</text>
+<rect x="20" y="72" width="440" height="240" rx="13" style="fill:#fff;stroke:#5C2B34;stroke-width:2"/>
+<text x="38" y="102" style="font-size:17px;font-weight:700;fill:#5C2B34">Project · 2.2</text>
+<text x="38" y="124" style="font-size:15px;fill:#5E5A55">One piece of work — every chat in it</text>
+<rect x="36" y="140" width="408" height="156" rx="11" style="fill:#F6F5F2;stroke:#1D2426;stroke-width:1.6"/>
+<text x="54" y="170" style="font-size:17px;font-weight:700;fill:#1D2426">Connected folder · 2.4</text>
+<text x="54" y="192" style="font-size:15px;fill:#5E5A55">The files Claude reads and saves into</text>
+<rect x="52" y="206" width="376" height="74" rx="9" style="fill:#F4C63F;stroke:#1D2426;stroke-width:1.6"/>
+<text x="70" y="236" style="font-size:17px;font-weight:700;fill:#1D2426">claude.md · 3.2</text>
+<text x="70" y="259" style="font-size:15px;fill:#1D2426">The folder's rules: where things go</text>
+<path d="M240 334 L240 352" style="stroke:#7F2C2F;stroke-width:2;stroke-dasharray:4 3"/>
+<path d="M234 340 L240 332 L246 340 Z" style="fill:#7F2C2F"/>
+<rect x="2" y="356" width="476" height="80" rx="14" style="fill:#fff;stroke:#7F2C2F;stroke-width:2;stroke-dasharray:6 4"/>
+<text x="22" y="388" style="font-size:17px;font-weight:700;fill:#7F2C2F">Skill · Session 4</text>
+<text x="22" y="412" style="font-size:15px;fill:#5E5A55">One job, packaged — works at any level</text>
+</svg>`,
         files: [ { label: `An example claude.md`, href: `https://ydac.sharepoint.com/:f:/g/IgCUkFW9V8gUTq6uSZMDiiPkAfdRENIYzTyb7P1BVSyjCQM?e=4W3FFK` } ],
-        intro: `A claude.md file in a folder is context that applies to every task run there. It's the same idea as project instructions, one level down.`,
-        prompts: [
-          { lab: `Let it interview you`,
-            txt: `Write a claude.md for this folder so you know how to work in here. Interview me first — ask me what this folder is for, where things should go, and what you should never do.` }
+        intro: `Look at what you've set up so far. Each step gave Claude context for a smaller, more specific area. This lesson adds the next one: standing instructions for a <strong>folder</strong>, written in a small file called <code>claude.md</code> that sits inside it.`,
+        table: { head: [`What you set up`, `Where`, `What it covers`], rows: [
+          [`Preferences`, `1.5`, `<strong>You</strong> — every conversation, everywhere`],
+          [`A Project`, `2.2`, `<strong>One piece of work</strong> — every chat inside that Project`],
+          [`A connected folder`, `2.4`, `<strong>The files</strong> Claude can read and save into`],
+          [`claude.md`, `This lesson`, `<strong>That folder's house rules</strong> — every task run on it`],
+          [`A skill`, `Session 4`, `<strong>One job</strong>, packaged so anyone can use it`]
         ] },
+        points: [
+          `<strong>"I already have Project instructions — why this too?"</strong> Project instructions are about the <em>work</em>: how to think, who it's for. A <code>claude.md</code> is about the <em>files</em>: where outputs go, how to name them, what never to touch.`,
+          `<strong>It travels with the folder.</strong> Because it lives inside the folder, it applies whether you're in a Project or not.`,
+          `<strong>Typical contents:</strong> what the folder is for, where finished work goes, file naming, and the one rule that matters most: never overwrite the original files.`,
+          `<strong>You'll see it pay off straight away.</strong> In 3.3 you'll ask for three files and say only "save them". Your <code>claude.md</code> will decide where they go.`
+        ],
+        prompts: [
+          { lab: `Let it interview you — run this with your 2.6 folder connected`,
+            txt: `Write a claude.md for this folder so you know how to work in here. Interview me first — ask me what this folder is for, where things should go, and what you should never do.` }
+        ],
+        exercise: `Connect the working folder from 2.6 and run the prompt. Answer its questions, and check it saves claude.md into the folder. Want to compare? Open the example linked above.` },
 
       { n: `3.3`, title: `Doing several things at once`,
         files: [ { label: `The three exercise files (same as 2.6)`, href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` } ],
