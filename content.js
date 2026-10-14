@@ -125,7 +125,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           { label: `Vehicle policy (prompt 2)`,  href: `https://ydac.sharepoint.com/:f:/g/IgAI-CFkj9FrTbejd2yTBy68ASiTOeQ-aLouiZinn8RYHzU?e=pAccF2` },
           { label: `20 exam papers (prompt 5)`, href: `https://ydac.sharepoint.com/:f:/g/IgAxWZT9q7Z-RrOQtmERWaRRAUBljWmpgJXoO7sSYmDOgIU?e=Ah4Y4Q` }
         ],
-        intro: `Six things people actually use it for. Files enter at number two and build from there. <strong>To give Claude a file, drag it from your folder straight into the chat box</strong> — or click <strong>+</strong> and choose it — then type the prompt and send.`,
+        intro: `Whatever you ask Claude to do is called a <strong>prompt</strong>. You can type it, or say it out loud (more on that in 1.8). Here are six typed prompts for the things people actually use Claude for, starting simple. Files come in at number two and build from there. <strong>To give Claude a file, drag it from your folder straight into the chat box</strong> — or click <strong>+</strong> and choose it — then type the prompt and send.`,
         online: { more: `Prompts 2 and 5 use the files linked above. Prompt 6 has its bullet points built in — once you've seen it work, swap in five of your own.` },
         prompts: [
           { lab: `1 · Ask Questions`,
@@ -148,7 +148,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `1.7`, title: `Prompting is a skill`,
-        intro: `Treat Claude like a capable colleague who's just walked in. Sharp, willing, and knows nothing about this place. The gap between a poor answer and a good one is almost always how much you told it.`,
+        intro: `Treat Claude like a capable colleague who's just walked in. Sharp, willing, and knows nothing about this place — so tell it what it needs to know.`,
         points: [
           `Technique has aged out. Role-play prompts, "think step by step", magic phrasing — you don't need any of it.`,
           `<strong>Information hasn't aged out.</strong> The difference between a poor answer and a good one is almost always how much you told it.`,
