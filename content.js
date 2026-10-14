@@ -256,7 +256,8 @@ I review, approve and authorise all AI-assisted output before it is used or dist
             txt: `Redo that using roles rather than names.` }
         ] },
 
-      { n: `2.2`, title: `Projects — staying organised and keeping context`,
+         { n: `2.2`, title: `Projects — staying organised and keeping context`,
+        online: { more: `Not sure what to put in your Project Instructions? Let Claude interview you, the same way it did for your preferences in 1.5. Start a chat inside your new Project and say: <em>"Interview me about this piece of work, one question at a time, then write me a short set of Project Instructions I can paste in."</em>` },
         intro: `Every chat you start is saved in your history. After a few weeks that's a long list, and finding the one conversation that mattered gets hard. A <strong>Project</strong> is a folder for related chats: everything about one piece of work, in one place. It also solves a second problem: inside a Project, Claude already knows the background, so you stop re-explaining it every time you start a new chat.`,
         points: [
           `<strong>Use a Project when</strong> you'll come back to the same piece of work more than once — a grant application, the monthly board report, a program you run.`,
