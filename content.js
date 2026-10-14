@@ -527,6 +527,10 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           `<strong>You connect it yourself, once,</strong> with your own RAC login. Claude then sees only what you can already see.`,
           `<strong>Also available if you use them:</strong> monday.com, Xero (finance staff — only what your own Xero login can see) and Jotform. Only connect what you use. Need something else? Ask Duane.`
         ],
+        howNow: [
+          `<strong>Connect it once:</strong> in Claude, go to <strong>Customize → Connectors</strong>. Find <strong>Microsoft 365</strong>, click <strong>Connect</strong>, and sign in with your RAC work account. The button changes to <strong>Disconnect</strong> when it's done.`,
+          `<strong>Use it in a chat:</strong> click <strong>+</strong> at the bottom left of the message box, choose <strong>Connectors</strong>, and make sure <strong>Microsoft 365</strong> is switched on. Then ask your question.`
+        ],
         intro: `A connector lets Claude reach a system you already use — your mail, your calendar, your SharePoint — without you exporting anything first. It uses your account and your permissions, so it can't see anything you can't already see. It reads when you ask; it isn't watching your inbox. And you can switch it off.`,
         online: { more: `If M365 isn't offered as a connector, ask Duane — RAC decides which connectors are switched on.` },
         prompts: [
