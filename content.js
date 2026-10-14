@@ -522,6 +522,11 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         exercise: `Run it on the folder you already have connected. Watch the plan appear first, then three files land.` },
 
       { n: `3.4`, title: `Connectors — reaching your other systems`,
+        points: [
+          `<strong>RAC has switched on Microsoft 365 for everyone.</strong> That's your Outlook mail and calendar, SharePoint, OneDrive and Teams — and it's the one this lesson uses.`,
+          `<strong>You connect it yourself, once,</strong> with your own RAC login. Claude then sees only what you can already see.`,
+          `<strong>Also available if you use them:</strong> monday.com, Xero (finance staff — only what your own Xero login can see) and Jotform. Only connect what you use. Need something else? Ask Duane.`
+        ],
         intro: `A connector lets Claude reach a system you already use — your mail, your calendar, your SharePoint — without you exporting anything first. It uses your account and your permissions, so it can't see anything you can't already see. It reads when you ask; it isn't watching your inbox. And you can switch it off.`,
         online: { more: `If M365 isn't offered as a connector, ask Duane — RAC decides which connectors are switched on.` },
         prompts: [
