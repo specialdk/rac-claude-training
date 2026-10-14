@@ -148,12 +148,22 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `1.7`, title: `Prompting is a skill`,
-        intro: `Treat Claude like a capable colleague who's just walked in. Sharp, willing, and knows nothing about this place — so tell it what it needs to know.`,
+        intro: `How you ask Claude for something is a skill, and like any skill it gets better the more you use it. The good news: you don't need special words. Claude is now very good at understanding what you mean from plain, everyday language. Ask the way you'd ask a capable colleague.`,
         points: [
-          `Technique has aged out. Role-play prompts, "think step by step", magic phrasing — you don't need any of it.`,
-          `<strong>Information hasn't aged out.</strong> The difference between a poor answer and a good one is almost always how much you told it.`,
-          `If an answer comes back generic, the fix is more context, not better wording.`
-        ] },
+          `<strong>Start simple.</strong> A short ask is fine. You'll often get something useful first time.`,
+          `<strong>Then shape it.</strong> If it's not quite right, just say so in the same chat — "shorter", "friendlier", "it's for staff, not the Board". It remembers what you've already said.`,
+          `<strong>The more it knows, the better it gets.</strong> Who it's for, what it's for, and anything that matters. Most of what makes an answer good is what you told it.`,
+          `<strong>Not sure what to say? Let Claude ask.</strong> Tell it what you need and ask it to question you first.`
+        ],
+        prompts: [
+          { lab: `1 · Start simple`,
+            txt: `Write a short piece for the staff newsletter about the Yirrkala road works.` },
+          { lab: `2 · Then shape it — same chat`,
+            txt: `Good start. Most staff drive that road every day, so lead with what they need: it starts Monday, runs about three weeks, and the detour is via the old airport road. Keep it under 150 words and friendly.` },
+          { lab: `3 · Or let Claude ask the questions`,
+            txt: `I need to write a newsletter piece about some road works. Before you write anything, ask me the questions you need answered to make it good.` }
+        ],
+        exercise: `Pick something you actually need to write this week. Ask for it in one line, then improve it with two or three follow-ups in the same chat. Notice how much better the last version is than the first.` },
 
       { n: `1.8`, title: `Talking to it — voice`,
         intro: `Voice is a conversation, not dictation. You talk, it talks back, and you can cut across it mid-sentence — it stops and listens.`,
