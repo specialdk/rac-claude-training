@@ -257,8 +257,15 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         ] },
 
       { n: `2.2`, title: `Projects — staying organised and keeping context`,
-        intro: `Two problems, one answer. Staying organised, so you can find the conversation that mattered. And keeping context, so you stop re-explaining the same background every time.`,
-        table: { head: [`Where`, `What it holds`, `Who writes it`], rows: [
+        intro: `Every chat you start is saved in your history. After a few weeks that's a long list, and finding the one conversation that mattered gets hard. A <strong>Project</strong> is a folder for related chats: everything about one piece of work, in one place. It also solves a second problem: inside a Project, Claude already knows the background, so you stop re-explaining it every time you start a new chat.`,
+        points: [
+          `<strong>Use a Project when</strong> you'll come back to the same piece of work more than once — a grant application, the monthly board report, a program you run.`,
+          `<strong>Use a Project when</strong> the same background keeps coming up — the funder's rules, the report format, who the audience is.`,
+          `<strong>Skip it for one-offs.</strong> A quick question or a single email doesn't need a Project. A normal chat is fine.`,
+          `<strong>Name it after the work, not the tool</strong> — "Grants 2026", not "Claude stuff". In six weeks you'll still know what's in it.`
+        ],
+        table: {
+          head: [`Where`, `What it holds`, `Who writes it`], rows: [
           [`Project Instructions`,   `How to behave. Standing rules — what to assume, what format, what to always offer. Loaded every message, so keep it short`, `You`],
           [`Files / Add to Project`, `What's true. Reference material, and anything that would hurt to lose`,                                                   `You`],
           [`Project memory`,         `Where you're up to. Current state, open questions, who owes you an answer. Rebuilt nightly from your chats`,               `Claude`],
