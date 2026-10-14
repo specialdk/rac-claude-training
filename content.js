@@ -263,7 +263,8 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           `<strong>Use a Project when</strong> you'll come back to the same piece of work more than once — a grant application, the monthly board report, a program you run.`,
           `<strong>Use a Project when</strong> the same background keeps coming up — the funder's rules, the report format, who the audience is.`,
           `<strong>Skip it for one-offs.</strong> A quick question or a single email doesn't need a Project. A normal chat is fine.`,
-          `<strong>Name it after the work, not the tool</strong> — "Grants 2026", not "Claude stuff". In six weeks you'll still know what's in it.`
+          `<strong>Name it after the work, not the tool</strong> — "Grants 2026", not "Claude stuff". In six weeks you'll still know what's in it.`,
+          `<strong>You don't have to set it all up at the start.</strong> A name is enough to begin. Add instructions and files as the work takes shape — most Projects grow that way.`
         ],
         table: {
           head: [`Where`, `What it holds`, `Who writes it`], rows: [
@@ -281,6 +282,8 @@ I review, approve and authorise all AI-assisted output before it is used or dist
           `<strong>Start a chat inside the Project</strong> and run the first prompt below. Watch it use what you just added.`
         ] },
         prompts: [
+                { lab: `Not sure what to put in the instructions? Let Claude interview you`,
+            txt: `Interview me about this piece of work, one question at a time. Then write me a short set of Project Instructions I can paste in. Keep them brief — I'll add more as the work develops.` },
           { lab: `Example Project Instructions — paste into the instructions box`,
             txt: `This Project is for RAC's grant applications in 2026.
 - Audience is funders: government (NIAA, NT Government) and philanthropic.
