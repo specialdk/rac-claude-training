@@ -591,38 +591,82 @@ I review, approve and authorise all AI-assisted output before it is used or dist
         options: [`A program only developers can write`, `A text file of instructions — no code`, `A paid add-on`, `A type of Project`],
         correct: 1,
         why: `Anyone can read a skill file. It's written instructions, packaged so they travel.` },
-      { q: `What is a plugin?`,
-        options: [`A browser extension`, `A bag of skills you install from one file`, `A hardware device`, `A connector to Xero`],
+      { q: `Where do RAC's skills come from?`,
+        options: [`You download them from a website`, `RAC installs them for everyone — they appear under Customize → Skills`, `You ask IT for a file`, `They only work in the desktop app`],
         correct: 1,
-        why: `Someone builds it once, hands you a file, and you have every skill inside it.` }
+        why: `RAC skills are installed once, for everyone. You can switch one off, but you can't change it.` },
+      { q: `Can the RAC email manager send an email for you?`,
+        options: [`Yes, if you ask`, `Yes, but only to other staff`, `No — it reads and drafts. You send it yourself from Outlook`, `Only on Fridays`],
+        correct: 2,
+        why: `It reads and drafts, never sends. You check everything before it goes out — that's RAC's AI Policy.` }
     ] },
   parts: [
 
     { title: `Part Five — Skills`, lessons: [
 
-      { n: `4.1`, title: `Using a skill`,
-        intro: `Type a slash, pick it from the list, go. Watch what it does that nobody asked for.`,
-        online: { more: `This only works once the RAC plugin is installed — see 4.3. Ask Duane for the plugin file.` },
-        prompts: [
-          { lab: `Run the skill`, txt: `/racdesign` }
-        ] },
-
-      { n: `4.2`, title: `What a skill actually is`,
+      { n: `4.1`, title: `What a skill is`,
         files: [ { label: `Example skill files`, href: `https://ydac.sharepoint.com/:f:/g/IgA3ZoaF0FExRZpusVM4n4ikAbsulg6iwh-nspLNmCYZ2a8?e=015cnm` } ],
-        intro: `If you've typed roughly the same prompt three times, that's a skill. And a skill is just a text file — no code in it anywhere.`,
+        intro: `A skill is a saved routine. You teach Claude how to do one kind of job once, and from then on it does it that way every time — for you, and for anyone it's shared with.`,
+        points: [
+          `It's just a text file of instructions. No code, no buttons. Open one of the example files and read it.`,
+          `You don't have to start it. Claude reads the short description at the top and uses the skill when your request fits. Or you type its command.`,
+          `A skill isn't an app. An app has buttons and remembers things. A skill is a routine Claude follows.`,
+          `It's the last rung of the ladder: Preferences (always) → Project (one body of work) → folder (one desk) → skill (one kind of job, anywhere).`
+        ],
         table: { head: [`Put it here`, `When`, `RAC example`], rows: [
-          [`Preferences`,                     `Relevant to everything you produce, always`,                                  `Yolŋu spelling and the ŋ character. Australian English`],
-          [`Project instructions / knowledge`, `Relevant to one body of work`,                                                `How this project's reports are structured; its standing facts`],
-          [`A skill`,                         `Relevant sometimes, to a kind of task — and needed by more than one person`, `racdesign — the brand guide. Only matters when you're building something that has to look right`]
+          [`Preferences`,                     `Relevant to everything you produce, always`,                     `Yolŋu spelling and the ŋ character. Australian English`],
+          [`Project instructions / knowledge`, `Relevant to one body of work`,                                   `How this project's reports are structured; its standing facts`],
+          [`A skill`,                         `One kind of task, done the same way — needed by more than one person`, `RAC email manager — how to run a morning briefing. Only matters when you ask about email`]
         ] } },
 
-      { n: `4.3`, title: `Getting one — the RAC plugin`,
-        intro: `A plugin is a bag of skills. Someone builds it once, hands you a file, and you have it.`,
-        online: { exercise: `Ask Duane for the RAC plugin file, install it, then come back to 4.1 and run /racdesign.` },
-        exercise: `Install the plugin and run the skill. You leave with a working RAC skill on your own account.` },
+      { n: `4.2`, title: `Two RAC skills`,
+        intro: `RAC already has two skills installed for every staff member. You don't need to do anything to get them.`,
+        table: { head: [`Skill`, `What it does`, `Try`], rows: [
+          [`RAC email manager`, `Reads your Outlook inbox and gives you a briefing — urgent items, deadlines, what needs a reply. Also grants, bills, filing suggestions and a weekly wrap.`, `<code>email_morning</code> · <code>email_grants</code> · <code>email_finance</code> · <code>email_file</code> · <code>email_week</code>`],
+          [`RAC design`,        `Makes anything visual look like RAC — colours, fonts, layout. Clean style for things people read; Bold for posters and signs.`, `"Make a notice for the tearoom"`]
+        ] },
+        points: [
+          `The email manager uses the Microsoft 365 connector from 3.4. Connect that first.`,
+          `<strong>It reads and drafts. It never sends.</strong> Ask it to reply and it writes the text; you copy it into Outlook, check it and send it yourself. That's RAC's AI Policy.`,
+          `Just type the command — no slash needed. Or ask in plain words: "what's urgent in my inbox?"`,
+          `RAC design picks a style for you and offers the other. Say "make it Bold" or "make it Clean" to switch.`
+        ],
+        prompts: [
+          { lab: `Morning briefing`, txt: `email_morning` },
+          { lab: `A notice in RAC style`, txt: `Make a one-page notice for the tearoom: label your food (the fridge is cleared Fridays at 3pm), wash your own cup, and last one out turns off the urn and the lights.` }
+        ],
+        exercise: `Run email_morning on your own inbox, then make one notice you actually need. Two working skills before morning tea.` },
 
-      { n: `4.4`, title: `What have you typed three times?`,
-        intro: `So — what do you type over and over?`,
+      { n: `4.3`, title: `Where skills come from`,
+        intro: `Skills reach you three ways. You'll see all three under Customize → Skills.`,
+        table: { head: [`It says`, `What it means`, `Can you change it?`], rows: [
+          [`From your organization`, `Installed by RAC for everyone — the email manager and RAC design`, `You can switch it off. Only RAC can change it`],
+          [`Created by you`,         `Skills you made yourself (next lesson)`,                          `Yes — it's yours, and only you see it`],
+          [`From Anthropic`,         `Built-in skills every account gets, such as skill-creator`,         `No, but you can switch it off`]
+        ] },
+        points: [
+          `Made something good? Tell Duane. If it's useful to others, it can be installed for everyone.`,
+          `Skills belong to an account. One you make on a personal account doesn't carry over to your RAC account.`
+        ],
+        howNow: [
+          `<strong>See your skills:</strong> Customize → Skills. Each one has a switch to turn it on or off.`
+        ] },
+
+      { n: `4.4`, title: `Build your own — a daily plan`,
+        intro: `You don't write a skill. You have a conversation, and Claude writes it for you. This one turns a messy list into a plan for your day.`,
+        points: [
+          `Claude uses its built-in skill-creator for this. Answer its questions in your own words.`,
+          `When it's finished, save it. It then appears under Customize → Skills as "Created by you".`,
+          `Not quite right? Tell it what to change — "put meetings first", "keep it to five items" — and it updates the skill.`
+        ],
+        prompts: [
+          { lab: `1. Start the interview`, txt: `I want to make a skill called daily-plan. When I give it a messy list of things to do, it should turn it into a plan for today: what to do first, what can wait, and what to hand to someone else. Interview me one question at a time about how I like to work, then build the skill.` },
+          { lab: `2. Test it`, txt: `daily-plan: finish the grant budget, reply to the auditor, book flights for Darwin, chase the fleet invoices, prep for Thursday's board meeting, sort the tearoom roster.` }
+        ],
+        exercise: `Build daily-plan, test it on your real list for tomorrow, then change one thing about it.` },
+
+      { n: `4.5`, title: `What have you typed three times?`,
+        intro: `If you've typed roughly the same request three times, it should be a skill. So — what do you type over and over?`,
         table: { head: [`Ideas already on the list`, `What it would do`], rows: [
           [`Grant Application Drafter`, `URL in, requirements extracted, draft against RAC's profile`],
           [`Board Paper Formatter`,     `Raw inputs into RAC's board paper template`],
@@ -634,7 +678,7 @@ I review, approve and authorise all AI-assisted output before it is used or dist
     ]},
 
     { title: `Close`, lessons: [
-      { n: `4.5`, title: `Building the habit`,
+      { n: `4.6`, title: `Building the habit`,
         intro: `Five things to take away.`,
         points: [
           `Start small. One task today, another next session.`,
